@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+	<Database>
+		<host>jdbc:mysql://125.216.243.193:3306/sprout</host>
+		<username>root</username>
+		<password>123456</password>
+	</Database>
+	<Mail>
+		<smtp>smtp.sina.com</smtp>
+		<hostmail>sklhs413@sina.com</hostmail>
+		<password>xgdsm2525225</password>
+		<title>Sprout Warning Mail</title>
+	</Mail>
+	<!-- 扫描数据库及时警报的频率，按秒来算 -->
+	<scan-frequency>30</scan-frequency>
+	<overall>
+		<broker-url>tcp://125.216.243.185:61616</broker-url>
+	</overall>
+	<!-- 应用服务器监控的相关配置 -->
+	<AppServer>
+		<amq>
+			<broker-url>tcp://125.216.243.185:61616</broker-url>
+			<queue-name>Queue.AppServer.Tasks</queue-name>
+			<retry-queue>Queue.AppServer.Retry</retry-queue>
+			<test-queue>Queue.AppServer.Test</test-queue>
+		</amq>
+	</AppServer>
+	<Alarmer>
+		<amq>
+			<broker-url>tcp://125.216.243.185:61616</broker-url>
+			<queue-name>Queue.Alarm.Tasks</queue-name>
+		</amq>
+	</Alarmer>
+	
+</config>
